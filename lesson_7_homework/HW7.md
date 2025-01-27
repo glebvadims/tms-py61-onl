@@ -66,3 +66,33 @@ print (f"Длина отрезка равна: {distance(x1=coordinate_x1, x2=co
 Введите первое число:23
 Длина отрезка равна: 5.0990195135927845
 ```
+
+## 4. Дано натуральное число number > 1. Проверьте, является ли оно простым. Программа должна вывести слово YES, если число простое и NO, в противном случае
+
+- Код 
+```python
+def simple_number_check (number):
+    if number <= 1:
+        return False
+    elif number == 2:
+        return True
+    elif number % 2 == 0:
+        return False
+    for i in range(3, int(number**0.5) + 1, 2):  
+        if number % i == 0: 
+            return False
+    return True
+
+value = int(input("Число: "))
+
+print(simple_number_check(number=value))
+```
+- Результат выполнения кода 
+```console
+PS C:\git\tms-py61> & C:/Users/admin/AppData/Local/Programs/Python/Python313/python.exe c:/git/tms-py61/lesson_7_homework/main.py
+Число: 7
+True
+PS C:\git\tms-py61> & C:/Users/admin/AppData/Local/Programs/Python/Python313/python.exe c:/git/tms-py61/lesson_7_homework/main.py
+Число: 8
+False
+```
